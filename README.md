@@ -1,20 +1,67 @@
-# nebula-freeze (protocol layer)
+# NebulaBunny FREEZE — Protocol Layer (MIT)
 
-本仓库只包含 NebulaBunny 的「协议层」与「示例层」内容，用于开源发布。
-它不包含任何 drift/execution/stress/replay 等商业闭源内核。
+This repository contains the **open protocol layer** of the NebulaBunny FREEZE system.
 
-结构说明：
-- protocol/  （MIT 开源协议层）
-  - schemas/：FREEZE-A / FREEZE-B / five_fingerprint 的 JSON Schema
-  - specs/：协议文档、字段定义、可复现说明
-  - cli/nb_freeze/：nb-freeze CLI 的开源壳（generate-a / validate-a/b）
-  - examples/：FREEZE-A/B 示例包（合成数据）
-  - validator/：结构校验 + OTS 验证脚本（无任何策略或执行逻辑）
+Its purpose is to define how a quant research or trading system can produce
+fully reproducible, auditable evidence packages — **FREEZE-A** and **FREEZE-B** —
+that can be independently verified without disclosing proprietary algorithms.
 
-- engine-proprietary/ （不开源，BCL 商业内核）
-  *此目录只在本地存在，不会推送至 GitHub。*
-  *包括 drift_engine / execution_engine / stress_cost_engine / replay_engine 等真正逻辑。*
+## What is included (MIT open source)
 
-本仓库只是协议层定义，不包含任何策略、撮合、费用、延迟、风控等逻辑。
+### 1. Protocol Schemas
+- JSON Schema definitions for FREEZE-A / FREEZE-B.
+- five_fingerprint schema (code_git_hash / data_version / spec_hash / seed / env_fingerprint).
 
-后续发布到 GitHub 时，engine-proprietary/ 将完全被排除。
+### 2. Specification Documents
+Located in `protocol/specs/`, they describe:
+- Required fields & units.
+- Versioning rules.
+- Backwards compatibility requirements.
+- Reproducibility principles.
+
+### 3. CLI Tools (structural only)
+`nb-freeze` is a minimal, safe-to-open-source tool that:
+- Generates a skeletal FREEZE-A package.
+- Validates FREEZE-A/B structure (schema + hash + directory layout).
+- Verifies OTS timestamp files (optional).
+
+It does **not** contain drift, execution, cost, or replay logic.
+
+### 4. Examples
+Located under `protocol/examples/`:
+- `freeze_a_example/`
+- `freeze_b_example/`
+
+Both are **synthetic** and safe for public demonstration.
+
+### 5. Validators
+Open-source structural validators:
+- `validate_freeze_a.py`
+- `validate_freeze_b.py`
+- `ots_verifier.py`
+
+They focus on schema + hash + timestamp checks only.
+
+## What is intentionally *not* included
+
+This repository **does not** contain:
+- Drift calculation engine  
+- Execution quality engine  
+- Stress cost engine  
+- Replay engine  
+- Strategy logic  
+- Backtest or execution algorithms  
+
+These remain part of the internal BCL-licensed engine.
+
+For internal structure and licensing of the commercial engine,
+see `engine-proprietary/INTERNAL_LAYERING.md`.
+
+## License
+
+- Protocol layer: **MIT License**
+- Internal engine (not included here): **NebulaBunny BCL License**
+
+## Version
+
+Current protocol version: **v1.0.0**
