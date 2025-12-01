@@ -1,0 +1,15 @@
+{
+  "proto_version": "1.0.0",
+  "package_type": "FREEZE_B",
+  "metadata": {
+    "id": "freeze_b_example_v1",
+    "description": "Synthetic FREEZE-B example package (for demonstration only)",
+    "five_fingerprint": {
+      "code_git_hash": "example_git_hash_abc123",
+      "data_version": "example_data_v1",
+      "spec_hash": "example_spec123",
+      "random_seed": 0,
+      "env_fingerprint": "example_env_fingerprint"
+    }
+  }
+}

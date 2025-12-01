@@ -1,0 +1,28 @@
+{
+  "hashes": {
+    "metadata.json": {
+      "algorithm": "sha256",
+      "value": "demo_hash_metadata"
+    },
+    "drift.json": {
+      "algorithm": "sha256",
+      "value": "demo_hash_drift"
+    },
+    "execution_audit.json": {
+      "algorithm": "sha256",
+      "value": "demo_hash_execution"
+    },
+    "quantile_distribution.json": {
+      "algorithm": "sha256",
+      "value": "demo_hash_quantile"
+    },
+    "stress_windows.json": {
+      "algorithm": "sha256",
+      "value": "demo_hash_stress"
+    },
+    "stability_gates.json": {
+      "algorithm": "sha256",
+      "value": "demo_hash_stability"
+    }
+  }
+}

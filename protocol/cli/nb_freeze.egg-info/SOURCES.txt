@@ -1,0 +1,11 @@
+setup.py
+nb_freeze/__init__.py
+nb_freeze/generate_a.py
+nb_freeze/utils.py
+nb_freeze/validate_a.py
+nb_freeze/validate_b.py
+nb_freeze.egg-info/PKG-INFO
+nb_freeze.egg-info/SOURCES.txt
+nb_freeze.egg-info/dependency_links.txt
+nb_freeze.egg-info/entry_points.txt
+nb_freeze.egg-info/top_level.txt

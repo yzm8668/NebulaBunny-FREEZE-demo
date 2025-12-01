@@ -1,0 +1,17 @@
+{
+  "gate_drift_median": {
+    "passed": true,
+    "threshold": 0.30,
+    "observed": 0.15
+  },
+  "gate_max_drawdown_30d": {
+    "passed": true,
+    "threshold": 0.20,
+    "observed": 0.12
+  },
+  "gate_execution_slippage": {
+    "passed": true,
+    "threshold": 1.50,
+    "observed": 0.80
+  }
+}

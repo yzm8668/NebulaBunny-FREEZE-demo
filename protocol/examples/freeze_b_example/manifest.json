@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "path": "metadata.json",
+      "role": "metadata",
+      "hash_key": "metadata.json"
+    },
+    {
+      "path": "drift.json",
+      "role": "drift",
+      "hash_key": "drift.json"
+    },
+    {
+      "path": "execution_audit.json",
+      "role": "execution_audit",
+      "hash_key": "execution_audit.json"
+    },
+    {
+      "path": "quantile_distribution.json",
+      "role": "quantile_distribution",
+      "hash_key": "quantile_distribution.json"
+    },
+    {
+      "path": "stress_windows.json",
+      "role": "stress_windows",
+      "hash_key": "stress_windows.json"
+    },
+    {
+      "path": "stability_gates.json",
+      "role": "stability_gates",
+      "hash_key": "stability_gates.json"
+    },
+    {
+      "path": "hashes.json",
+      "role": "hash_index",
+      "hash_key": "hashes.json"
+    }
+  ]
+}

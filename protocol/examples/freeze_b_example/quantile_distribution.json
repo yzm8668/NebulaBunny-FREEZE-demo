@@ -1,0 +1,15 @@
+{
+  "vol_low": {
+    "p50": 0.03,
+    "p90": 0.10,
+    "p95": 0.20,
+    "out_of_band_ratio": 0.01
+  },
+  "vol_high": {
+    "p50": 0.15,
+    "p90": 0.35,
+    "p95": 0.60,
+    "out_of_band_ratio": 0.05
+  },
+  "notes": "Drift quantiles under different volatility regimes (synthetic demo)."
+}

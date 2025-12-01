@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "path": "payload/demo_result.json",
+      "role": "result",
+      "hash_key": "payload/demo_result.json"
+    }
+  ]
+}

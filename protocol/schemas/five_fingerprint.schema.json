@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NebulaBunny five_fingerprint schema",
+  "type": "object",
+  "required": [
+    "code_git_hash",
+    "data_version",
+    "spec_hash",
+    "random_seed",
+    "env_fingerprint"
+  ],
+  "properties": {
+    "code_git_hash": {
+      "type": "string",
+      "description": "Git commit hash of the code used to generate this package."
+    },
+    "data_version": {
+      "type": "string",
+      "description": "Version identifier of the input data snapshot."
+    },
+    "spec_hash": {
+      "type": "string",
+      "description": "SHA1 fingerprint of engine_spec.yaml (first 12 chars)."
+    },
+    "random_seed": {
+      "type": "integer",
+      "description": "Global random seed used for deterministic replay."
+    },
+    "env_fingerprint": {
+      "type": "string",
+      "description": "Opaque identifier describing environment (OS, Python, libs)."
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,4 @@
+[console_scripts]
+nb-freeze-generate-a = nb_freeze.generate_a:main
+nb-freeze-validate-a = nb_freeze.validate_a:main
+nb-freeze-validate-b = nb_freeze.validate_b:main

@@ -1,0 +1,20 @@
+{
+  "proto_version": "1.0.0",
+  "package_type": "FREEZE_A",
+  "metadata": {
+    "id": "freeze_a_example_v1",
+    "description": "Synthetic FREEZE-A example package (for demonstration only)",
+    "universe": ["BTCUSDT"],
+    "time_range": {
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2025-01-07T00:00:00Z"
+    },
+    "five_fingerprint": {
+      "code_git_hash": "example_git_hash_abc123",
+      "data_version": "example_data_v1",
+      "spec_hash": "example_spec123",
+      "random_seed": 0,
+      "env_fingerprint": "example_env_fingerprint"
+    }
+  }
+}

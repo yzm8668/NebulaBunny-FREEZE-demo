@@ -1,0 +1,13 @@
+{
+  "backtest_vs_shadow_bps": {
+    "p50": 0.05,
+    "p90": 0.20,
+    "p95": 0.35
+  },
+  "shadow_vs_live_bps": {
+    "p50": 0.10,
+    "p90": 0.30,
+    "p95": 0.50
+  },
+  "notes": "All numbers here are synthetic demo values, not real production thresholds."
+}

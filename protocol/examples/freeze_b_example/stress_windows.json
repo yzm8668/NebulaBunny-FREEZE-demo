@@ -1,0 +1,16 @@
+[
+  {
+    "label": "example_flash_move",
+    "start": "2025-01-03T00:00:00Z",
+    "end": "2025-01-03T06:00:00Z",
+    "max_drawdown_pct": 0.04,
+    "drift_max_bps": 0.8
+  },
+  {
+    "label": "example_liquidity_crunch",
+    "start": "2025-01-05T12:00:00Z",
+    "end": "2025-01-05T18:00:00Z",
+    "max_drawdown_pct": 0.06,
+    "drift_max_bps": 1.2
+  }
+]

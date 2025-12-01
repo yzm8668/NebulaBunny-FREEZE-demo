@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NebulaBunny FREEZE-B package schema",
+  "type": "object",
+  "required": [
+    "proto_version",
+    "package_type",
+    "metadata",
+    "drift",
+    "execution_audit",
+    "quantile_distribution",
+    "stress_windows",
+    "stability_gates",
+    "manifest"
+  ],
+  "properties": {
+    "proto_version": {
+      "type": "string",
+      "description": "Protocol version of this FREEZE-B package, e.g. '1.0.0'."
+    },
+    "package_type": {
+      "type": "string",
+      "const": "FREEZE_B",
+      "description": "Must be 'FREEZE_B' for this schema."
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "id",
+        "five_fingerprint"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Opaque identifier of this FREEZE-B package."
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of what this result-only package represents."
+        },
+        "five_fingerprint": {
+          "$ref": "five_fingerprint.schema.json#",
+          "description": "Deterministic fingerprint of code, data, spec, seed and environment."
+        }
+      },
+      "additionalProperties": true
+    },
+    "drift": {
+      "type": "object",
+      "description": "Drift metrics between backtest / shadow / live (aggregated).",
+      "additionalProperties": true
+    },
+    "execution_audit": {
+      "type": "object",
+      "description": "Execution quality metrics, e.g. slippage, fill ratios, maker/taker breakdown.",
+      "additionalProperties": true
+    },
+    "quantile_distribution": {
+      "type": "object",
+      "description": "Distribution of drift under different regimes (p50 / p90 / p95, etc.).",
+      "additionalProperties": true
+    },
+    "stress_windows": {
+      "type": "array",
+      "description": "Stress scenarios and their corresponding metrics.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "stability_gates": {
+      "type": "object",
+      "description": "Stability gate results: pass/fail flags and thresholds.",
+      "additionalProperties": true
+    },
+    "manifest": {
+      "type": "object",
+      "required": [
+        "files"
+      ],
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "role"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Relative path of the file inside the package."
+              },
+              "role": {
+                "type": "string",
+                "description": "Logical role of this file, e.g. 'drift_json', 'execution_audit_json'."
+              },
+              "hash_key": {
+                "type": "string",
+                "description": "Key into the hashes map for this file."
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "hashes": {
+      "type": "object",
+      "description": "Optional map from hash key or path to its digest.",
+      "patternProperties": {
+        ".*": {
+          "type": "object",
+          "required": [
+            "algorithm",
+            "value"
+          ],
+          "properties": {
+            "algorithm": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "description": "Optional evidence bundle: signatures, cosign attestations, etc.",
+      "additionalProperties": true
+    },
+    "ots": {
+      "type": "object",
+      "description": "Optional OpenTimestamps-related metadata.",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

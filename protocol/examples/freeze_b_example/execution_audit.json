@@ -1,0 +1,12 @@
+{
+  "avg_slippage_bps": 0.8,
+  "maker_ratio": 0.65,
+  "partial_fill_ratio": 0.10,
+  "venue_breakdown": {
+    "EXAMPLE_EXCHANGE": {
+      "volume_pct": 1.0,
+      "avg_spread_bps": 1.2
+    }
+  },
+  "notes": "Synthetic execution quality summary for demo only."
+}
